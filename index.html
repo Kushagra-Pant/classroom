@@ -1,55 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="thestyles.css">
-        <script>
-            function date(){
-                today = new Date();
-                options = { month: 'short', day: '2-digit', year: 'numeric' };
-                document.getElementById("date").innerHTML = "Today's Date: " + today.toLocaleDateString('en-US', options);
-            }
-
-            class Student {
-                constructor(name, days, attendance, makeups){
-                    this.name = name;
-                    this.days = days;
-                    this.att = attendance;
-                    this.makeups = makeups;
-                }
-            }
-
-            students = []
-
-            function extract(){
-                return fetch('students.txt').then(response => response.text()).then(data=>{
-                    const lines = data.trim().split("\n")
-                    
-                    for(i = 0; i < lines.length; i++){
-                        [name, days, attendance, makeups] = lines[i].split('\t');
-                        students.push(new Student(name, days.split(','), attendance.split(';'), makeups.split(',')));
-                    }
-
-                })
-            }
-
-            function load(){
-                date()
-                extract()
-            }
-        </script>
-    </head>
-    <body onload="load()">
-        <nav>
-            <h1>Your classroom</h1>
-            <button><</button>
-            <p id="date"></p>
-            <button>></button>
-            <br>
-            <a href="addstudent.html">
-                <button id = "add">Add student</button>
-            </a>
-        </nav>
-        <div class="room">
-        </div>
-    </body>
+  <head>
+    <link rel="stylesheet" href="thestyles.css">
+  </head>
+  <body>
+    <script src="enter.js"></script>
+    <h1>Welcome to your classroom!</h1>
+    <input type="text" class = "name" id="passcode" placeholder="Enter passcode"/> 
+    <br> <br>
+    <button onclick="enter()" id="gate">&ensp;Enter!&ensp;</button>
+    <br> <br> <br>
+    <button id="gate">&ensp;Enter as guest&ensp;</button>
+  </body>
 </html>
