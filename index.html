@@ -10,10 +10,10 @@
             }
 
             class Student {
-                constructor(name, days, history, makeups){
+                constructor(name, days, attendance, makeups){
                     this.name = name;
                     this.days = days;
-                    this.history = history;
+                    this.att = attendance;
                     this.makeups = makeups;
                 }
             }
@@ -25,12 +25,12 @@
                     const lines = data.split("\n")
 
                     for(i = 0; i < lines.length; i++){
-                        [name, days, history, makeups] = lines[i].split('\t');
+                        [name, days, attendance, makeups] = lines[i].split('\t');
                         console.log('Name:', name);
                         console.log('Days:', days);
-                        console.log('History:', history);
+                        console.log('History:', attendance);
                         console.log('Makeups:', makeups);
-                        students.push(new Student(name, days.split(','), history.split(';'), makeups.split(',')));
+                        students.push(new Student(name, days.split(','), attendance.split(';'), makeups.split(',')));
                     }
 
                 })
