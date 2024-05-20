@@ -25,7 +25,7 @@
                     const lines = data.split("\n")
 
                     for(i = 0; i < lines.length; i++){
-                        [name, days, history, makeups] = lines.split('\t');
+                        [name, days, history, makeups] = i.split('\t');
                         students.push(new Student(name, days.split(','), history.split(';'), makeups.split(',')));
                     }
 
