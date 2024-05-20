@@ -26,6 +26,10 @@
 
                     for(i = 0; i < lines.length; i++){
                         [name, days, history, makeups] = lines[i].split('\t');
+                        console.log('Name:', name);
+                        console.log('Days:', days);
+                        console.log('History:', history);
+                        console.log('Makeups:', makeups);
                         students.push(new Student(name, days.split(','), history.split(';'), makeups.split(',')));
                     }
 
