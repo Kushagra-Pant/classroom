@@ -1,0 +1,32 @@
+
+body{
+    text-align: center;
+}
+.box{
+    background-color: gainsboro;
+    border-color: black;
+    border-style: solid;
+    width: 150px;
+    height: 100px;
+}
+#add{
+    border-radius: 20px;
+    border-width: 2px;
+    padding: 5px;
+}
+#add:hover{
+    opacity: 25%;
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+p{ 
+    display: inline-block;
+}
+.name{
+    font-size: 25px;
+}
+.check{
+    width: 100px;
+}
+h1{
+    font-size: 50px;
+}
