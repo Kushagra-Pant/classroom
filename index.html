@@ -22,14 +22,10 @@
 
             function extract(){
                 return fetch('students.txt').then(response => response.text()).then(data=>{
-                    const lines = data.split("\n")
-
+                    const lines = data.strip().split("\n")
+                    
                     for(i = 0; i < lines.length; i++){
                         [name, days, attendance, makeups] = lines[i].split('\t');
-                        console.log('Name:', name);
-                        console.log('Days:', days);
-                        console.log('History:', attendance);
-                        console.log('Makeups:', makeups);
                         students.push(new Student(name, days.split(','), attendance.split(';'), makeups.split(',')));
                     }
 
