@@ -22,7 +22,7 @@
 
             function extract(){
                 return fetch('students.txt').then(response => response.text()).then(data=>{
-                    const lines = data.strip().split("\n")
+                    const lines = data.trim().split("\n")
                     
                     for(i = 0; i < lines.length; i++){
                         [name, days, attendance, makeups] = lines[i].split('\t');
